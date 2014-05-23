@@ -20,3 +20,4 @@ int main(void)
     }
     return 0;
 }
+//挺简单一个题，我想太多了。
