@@ -34,7 +34,7 @@ main()
         if (x==0&&y==0&&k==0)
             break;
         point map(1024,1024);
-        cout<<check(k,map,point(x,y))<<endl;
+        printf( "%3d\n", check( k, map, point (x,y)) );
     }
 }
 
