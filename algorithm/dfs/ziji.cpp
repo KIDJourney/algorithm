@@ -16,7 +16,7 @@ int dfs(int s,int now ,int all)
         ans[now]=num[i];
         dfs(i+1,now+1,all);
     }
-}
+
 main()
 {
     for (int i=1; i<=5; i++)
