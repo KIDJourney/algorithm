@@ -76,5 +76,3 @@ int main()
         printf("Impossible\n");
     return 0;
 }
-
-

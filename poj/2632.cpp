@@ -1,53 +1,54 @@
-/*************************************************************************
-	> File Name: 2632.cpp
-	> Author: KIDJourney
-	> Mail: kingdeadfishcn@gmail.com
-	> Created Time: 2014年07月01日 星期二 11时51分19秒
- ************************************************************************/
-#include<stdio.h>
-#include<string.h>
-#include<iostream>
-using namespace std;
-struct robot
-{
-    int x,y;
-    int dirct;
-    robot(int tx,int ty,char dir)
-    {
-        x=tx,y=ty;
-        if (dir=='N') dirct=0;
-        if (dir=='E') dirct=1;
-        if (dir=='S') dirct=2;
-        if (dir=='W') dirct=3;
-    }
-    robot(){};
-};
-robot rob[200];
-int map[200][200];
-int d,w;
-int n,o;
-main()
-{
-    int t;
-    scanf("%d",&t);
-    while(t--)
-    {
-        memset(map,0,sizeof(map));
-        int tx,ty;
-        char td;
-        scanf("%d%d",&w,&d);
-        scanf("%d%d",&n,&o);
-        for (int i=0;i<n;i++)
-        {
-            scanf("%d%d %c",&tx,&ty,&td);
-            rob[i]=robot(tx,ty,td);
-            map[tx][ty]=i;
-        }
-        for (int i=0;i<o;i++)
-        {
-            int nor,times;
-            char order;
-            scanf("%d %c%d",&nor,&order,&times);
-        }
-    }
+#include <cstdio>
+#include <cstring>
+#define MAX 105
+
+int dx[4] = {0, -1, 0, 1}, dy[4] = {1, 0, -1, 0};
+int a, b, n, m, map[MAX][MAX], sta[MAX][3];
+int dir(char c){switch(c){case 'N': return 0; case 'W': return 1; case 'S': return 2; default: return 3;}}
+
+int main() {
+	int T, i, j, x, y, suc;
+	char ts[5];
+	//freopen("input.txt", "r", stdin);
+	scanf("%d", &T);
+	while(T--) {
+		memset(map, 0, sizeof(map));
+		scanf("%d%d%d%d", &a, &b, &n, &m);
+		for(i = 1; i <= n; i++) {
+			scanf("%d%d%s", &x, &y, ts);
+			map[x][y] = i;
+			sta[i][0] = x, sta[i][1] = y, sta[i][2] = dir(ts[0]); 
+		}
+		suc = 1;
+		while(m--) {
+			scanf("%d%s%d", &i, ts, &j);
+			while(j-- && suc)
+				switch(ts[0]){
+					case 'L':
+						sta[i][2] = (sta[i][2] + 1) % 4;
+						break;
+					case 'R':
+						sta[i][2] = (sta[i][2] + 3) % 4;
+						break;
+					default:
+						map[sta[i][0]][sta[i][1]]  = 0;
+						x = sta[i][0] += dx[sta[i][2]];
+						y = sta[i][1] += dy[sta[i][2]];
+						if(!x || x > a || !y || y > b) {
+							printf("Robot %d crashes into the wall\n", i);
+							suc = 0;
+						}
+						else if(map[x][y]) {
+							printf("Robot %d crashes into robot %d\n", i, map[x][y]);
+							suc = 0;
+						}
+						else
+							map[x][y] = i;
+						break;
+				}
+		}
+		if(suc)
+			printf("OK\n");
+	}
+	return 0;
 }
