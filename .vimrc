@@ -147,9 +147,9 @@ func SetTitle()
 		call append(line(".")+16, "const double eps=1e-9;")
         call append(line(".")+17, "const double PI=atan(1.0)*4.0;")
         call append(line(".")+18, "main()")
-        call append(line(".")+20, "}")
-        call append(line(".")+21, "")
-        call append(line(".")+22, "{")
+        call append(line(".")+19, "{")
+        call append(line(".")+20, "")
+        call append(line(".")+21, "}")
     endif
     if &filetype == 'c'
 		call append(line(".")+6, "#include<stdio.h>")
@@ -237,25 +237,7 @@ map <F6> :call FormartSrc()<CR><CR>
 "定义FormartSrc()
 func FormartSrc()
     exec "w"
-    if &filetype == 'c'
-        exec "!astyle --style=ansi -a --suffix=none %"
-    elseif &filetype == 'cpp' || &filetype == 'hpp'
-        exec "r !astyle --style=ansi --one-line=keep-statements -a --suffix=none %> /dev/null 2>&1"
-    elseif &filetype == 'perl'
-        exec "!astyle --style=gnu --suffix=none %"
-    elseif &filetype == 'py'||&filetype == 'python'
-        exec "r !autopep8 -i --aggressive %"
-    elseif &filetype == 'java'
-        exec "!astyle --style=java --suffix=none %"
-    elseif &filetype == 'jsp'
-        exec "!astyle --style=gnu --suffix=none %"
-    elseif &filetype == 'xml'
-        exec "!astyle --style=gnu --suffix=none %"
-    else
-        exec "normal gg=G"
-        return
-    endif
-    exec "e! %"
+    exec "%!astyle"
 endfunc
 "结束定义FormartSrc
 
