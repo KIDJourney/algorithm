@@ -163,7 +163,6 @@ func SetTitle()
 endfunc 
 autocmd BufNewFile * normal G
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "键盘命令
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -238,6 +237,7 @@ map <F6> :call FormartSrc()<CR><CR>
 func FormartSrc()
     exec "w"
     exec "%!astyle"
+    normal G
 endfunc
 "结束定义FormartSrc
 
