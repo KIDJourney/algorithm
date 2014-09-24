@@ -2,7 +2,7 @@ class Solution:
     # @param A, a list of integer
     # @return an integer
     def singleNumber(self, A):
-    	reduce(lambda x,y : x^y , A)
+    	return	reduce(lambda x,y : x^y , A)
 
 #This problem is solved by using bit manipulation   	
 #When same nums xor we will get 0
