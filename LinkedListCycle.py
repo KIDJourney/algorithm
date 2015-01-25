@@ -5,18 +5,17 @@
 #         self.next = None
 
 class Solution:
-	self.iddir = {}
+    iddir = {}
     # @param head, a ListNode
     # @return a boolean
-    def hasCycle(self, head):
-    	if id(head) in self.iddir.keys():
-    		self.iddir[id(head)] += 1
-    		if self.iddir[id(head)] > 1 :
-    			return False
-    	else :
-    		self.iddir[id(head)] = 1
-
-    	if head.next is None :
-    		return True
-    	else :
-    		return self.hasCycle(head.next)
+    def hasCycle(self, head) :
+        if head is None :
+            return False
+        else :
+            if id(head) in self.iddir.key() :
+                self.iddir[id(head)] += 1
+                if self.iddir[id(head)] >= 1 :
+                    return True
+            else :
+                self.iddir[id(head)] = 1
+                return self.hasCycle(head.next)
