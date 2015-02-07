@@ -4,4 +4,4 @@
 # @Author: KIDJourney
 # @Email: kingdeadfish@qq.com
 # @Date:   2014-09-25
-print 1 == True
+print int("+-10")
