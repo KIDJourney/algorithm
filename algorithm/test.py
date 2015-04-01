@@ -1,5 +1,3 @@
-n = 4
-a , b = 1 , 2 
-for i in range(n-1) :
-    a , b = b , a + b
-print a
+mylist = [1,2,3,4,5]
+mylist.insert(0,0)
+print mylist
