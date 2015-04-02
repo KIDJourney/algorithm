@@ -1,7 +1,7 @@
 /* 
 * @Author: KIDJourney
 * @Date:   2015-03-15
-* @Last Modified by:   KIDJourney
+* @Last Modified by:   kidjourney
 * @Last Modified time: 2015-03-15
 */
 SELECT E1.Name
