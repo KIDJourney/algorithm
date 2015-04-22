@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Author: KIDJourney
-# @Date:   2015-03-23 22:53:38
+# @Author: kidjourney
+# @Date:   2015-04-22 20:45:24
 # @Last Modified by:   kidjourney
-# @Last Modified time: 2015-03-31 21:13:01
+# @Last Modified time: 2015-04-22 21:08:57
 # Definition for a  binary tree node
 # class TreeNode:
 #     def __init__(self, x):
@@ -15,16 +15,13 @@ class Solution:
     # @param root, a tree node
     # @return a boolean
     def isBalanced(self, root):
-        self.flag = 1
-        self.clu(root)
-        if self.flag :
+        if not root :
             return True
-        else :
-            return False
+        left = self.judeg(root->left)
+        right = self.judeg(root->right)        
 
-    def clu(self,node) :
-        if not node :
-            return 1
-        if abs(self.clu(node.left) - self.clu(node.right)) > 1 :
-            self.flag = 0
-        return max(self.clu(node.left) , self.clu(node.right)) + 1
+        return abs(left - right) <= 1 and self.isBalanced(root.right) and self.isBalanced(root.left)
+    def judeg(self,root):
+        if not root :
+            reutnr 0
+        return max(self.judeg(root->left),self.judeg(root->right)+1)
