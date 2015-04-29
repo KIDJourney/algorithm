@@ -19,18 +19,19 @@ class Solution:
                 return True
         return False
 
-class Solution:
-    # @param head, a ListNode
-    # @return a boolean
-    def hasCycle(self, head):
-        try :
-            a = head
-            b = head.next.next
+# method 2
 
-            while a!=b :
-                a = a.next
-                b = b.next.next
+# class Solution:
+#     # @param head, a ListNode
+#     # @return a boolean
+#     def hasCycle(self, head):
+#         try :
+#             a = head
+#             b = head.next.next
 
-            return True
-        except :
-            return False
+#             while a!=b :
+#                 a = a.next
+#                 b = b.next.next
+#             return True
+#         except :
+#             return False
