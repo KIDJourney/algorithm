@@ -3,7 +3,7 @@
 # @Author: kidjourney
 # @Date:   2015-05-08 23:16:29
 # @Last Modified by:   kidjourney
-# @Last Modified time: 2015-05-08 23:36:29
+# @Last Modified time: 2015-05-08 23:37:32
 class Solution:
     # @param {integer} n
     # @return {integer}
@@ -21,5 +21,5 @@ class Solution:
             i += 1
         return sum(mydir)
 
-job = Solution()
-print (job.countPrimes(4))
+# job = Solution()
+# print (job.countPrimes(4))
