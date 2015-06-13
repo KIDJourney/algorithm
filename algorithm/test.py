@@ -1,2 +1,4 @@
-mydir = {1:1,2:2}
-print(mydir.setdefault(1,1))
+a = None
+b = None
+while a and b :
+    print (1)
