@@ -3,10 +3,11 @@
 # @Author: kidjourney
 # @Date:   2015-06-15 23:35:16
 # @Last Modified by:   kidjourney
-# @Last Modified time: 2015-06-17 11:07:22
-n = 7 
-m = 5
-ans = m
-for i in range(m+1,n+1) :
-    ans = ans & i
-print( ans)
+# @Last Modified time: 2015-06-17 22:50:51
+mylist = []
+mylist.append(10)
+mylist.append(1)
+mylist.pop()
+a = "{0} {1} {2}".format(12,'+',12)
+print (a)
+print(mylist)
