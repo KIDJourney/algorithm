@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1406006312 source:/home/acmclub/ACM/asdf/main.cpp
-	<algorithm>
-	<bits/stdc++.h>
-	<iostream>
-	<cstring>
-	<cstdio>
-
