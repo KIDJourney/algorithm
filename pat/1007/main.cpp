@@ -2,31 +2,36 @@
 using namespace std;
 main()
 {
-    int n;
-    int maxsum = 0;
-    int thissum = 0 ;
+    int number[10005];
     int s = 0 ;
     int e = 0 ;
-    int start ,  tend;
-    int number[10005];
+    int start = 0;
+    int tend = 0;
+    int n;
     cin>>n;
-    for(int i = 0 ; i < n ; i++){
+    tend = n-1;
+    int thissum = 0;
+    int maxsum = 0;
+    for (int i = 0 ; i < n ; i++){
         cin>>number[i];
     }
-    for(int i = 0 ; i < n ; i++){
-        thissum += number[i];
-        e = i ;
-        if (thissum > maxsum){
+    for (int i = 0 ; i < n ; i++){
+        if (thissum >= 0){
+            thissum += number[i];
+            e = i;
+        } else {
+            thissum = number[i];
+            s = i;
+            e = i;
+        }
+        if (thissum > maxsum || (thissum == 0 && tend == n-1)){
             maxsum = thissum;
             start = s;
             tend = e;
-        } else {
-            if (thissum < 0){
-                s = i + 1;
-                thissum = 0;
-            }
         }
     }
-    cout<<maxsum<<' '<<number[start]<<' '<<number[tend]<<endl;
+    cout<<maxsum<<' '<<number[start]<<' '<<number[tend];
+
+
 
 }
