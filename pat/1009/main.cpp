@@ -29,10 +29,17 @@ main()
             }
         }
     }
-
+    int sizeofans = 0;
+    for (std::map<long long , double>::iterator iter = ans.begin() ; iter != ans.end() ; iter ++){
+        if (iter->second){
+            sizeofans ++;
+        }
+    }
     printf("%d",ans.size());
     for(std::map<long long,double>::reverse_iterator iter = ans.rbegin() ; iter != ans.rend() ; iter ++){
+        if (iter->second != 0){
         printf(" %d %.1lf",iter->first,iter->second);
+        }
     }
 
 
