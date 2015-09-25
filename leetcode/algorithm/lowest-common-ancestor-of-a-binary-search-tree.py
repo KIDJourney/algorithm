@@ -13,4 +13,23 @@ class Solution(object):
         :type q: TreeNode
         :rtype: TreeNode
         """
+        if not root :
+            return None
+
+        if p.val == root.val or q.val == root.val :
+            return root
+
+        if p.val > q.val :
+            p , q = q , p
+
+        if p.val < root.val and q.val > root.val :
+            return root         
+
+        if p.val > root.val :
+            return self.lowestCommonAncestor(root.right,p,q)
+        else :
+            return self.lowestCommonAncestor(root.left,p,q)
+
         
+
+                
