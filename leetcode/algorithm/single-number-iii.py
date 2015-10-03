@@ -18,5 +18,4 @@ class Solution(object):
 
         return [a,b]
 
-job = Solution()
-print(job.singleNumber([1,1,3,3,2,5]))
+    
