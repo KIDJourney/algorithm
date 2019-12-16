@@ -21,10 +21,4 @@ class Solution(object):
         self.step = 1
         self.value = []
 
-    def dfs(self , node):
-
-        if node.left is not None :
-            self.dfs(node.left)
-
-        if node.left is not None :
-            self.dfs(node.left)
+    def dfs(self, node):
