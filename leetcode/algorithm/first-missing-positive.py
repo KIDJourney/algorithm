@@ -1,7 +1,10 @@
 class Solution(object):
-    def missingNumber(self, nums):
+    def firstMissingPositive(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
-        for i in nums:
+
+
+if __name__ == "__main__":
+    s = Solution()
