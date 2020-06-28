@@ -33,3 +33,7 @@ class Solution(object):
             4   5
            / \   \
           1   1   5"""
+
+         1
+        4 5
+       4 4 5
