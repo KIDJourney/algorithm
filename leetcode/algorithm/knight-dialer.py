@@ -1,3 +1,6 @@
+m = 10 ** 9 + 7
+
+
 class Solution(object):
     def knightDialer(self, N):
         """
@@ -23,7 +26,7 @@ class Solution(object):
         st = 0
         for i in range(10):
             st += self.dfs(i, N)
-        return st
+        return st % m
 
     def dfs(self, pos, n):
         if n == 1:
@@ -36,9 +39,9 @@ class Solution(object):
         for next_pos in self.target_map[pos]:
             cnt = self.dfs(next_pos, n - 1)
             self.cache[(next_pos, n - 1)] = cnt
-            tsum += cnt
+            tsum += cnt % m
 
-        return tsum
+        return tsum % m
 
 
 s = Solution()
